@@ -12,8 +12,8 @@ public class SimpleProducer {
         ConnectionFactory factory = new ConnectionFactory();
         //factory.setHost("localhost:8080");
         factory.setHost("127.0.0.1");
-        //factory.setPort(5672);
-        factory.setPort(8585);
+        //factory.setPort(5672);     -p 8585:5672
+        factory.setPort(8585);   // -p 8585:5672
         try (Connection connection = factory.newConnection();
              Channel channel = connection.createChannel()){
             channel.queueDeclare(QUEUE_NAME, false, false, false, null);
